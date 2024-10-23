@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	 <meta charset="UTF-8"> 
+
+	<head>
+
+		<!-- SOURCE CODE -->
+		
+		<script src="./../scope/Manifest.js"></script>
+		<script src="./../dom/Element.js"></script>
+		<script src="./../console/Header.js"></script>
+		<script src="./../console/Message.js"></script>
+		<script src="./../console/Messages.js"></script>
+		<script src="./../console/Notice.js"></script>
+		<script src="./../console/Warning.js"></script>
+		<script src="./../console/Error.js"></script>
+		<script src="./../console/Critical.js"></script>
+		<script src="./../console/Console.js"></script>
+		<script src="./../system/Validator.js"></script>
+		<script src="./../system/Config.js"></script>
+		<script src="./../system/Main.js"></script>
+		<script src="./../scope/Alias.js"></script>
+		
+		
+		<!-- COMPILE CODE The compile code consist of a minified version of all the single JavaScript files above that comprise the validator tool -->
+		<!--c<script src="src/js/VPJsOOP.js"></script> -->
+
+		<!-- APP CODE -->
+		<script src="src/js/Demo.js"></script>
+		<script type="text/javascript">
+			
+			//var x : 10; // SYNTAX ERROR - NOTE: this error needs to be removed or commented out for interval functionality to function properly
+
+			// LEAK GENERATOR - generates a random variable in the global scope at regular intervals
+			window.setInterval(function() {
+				var seed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				window[seed.charAt(Math.floor(Math.random() * seed.length))] = "BANG!"; // Adds a variable to the global scope by adding it to the window object. The name of the variable is randomly selected from the seed string. If the same name is selected twice thus will not add an additional variable to the global scope, but just reassign the same value. If the numbers at the end are selected, this will not lead to a variable to be added to the global scope because a proper identifier name must be used and they cannot consist of number (cannot start with a number and cannot consist of only numerical digits).
+			}, 5000);
+
+		</script>
+
+		<title>JsOOP - Demo</title>
+
+	</head>
+
+	<body>
+
+		<button id="btn_generate" type="button">Generate name</button>
+		<button id="btn_clear" type="button">Clear list</button>
+		<ul id="name_list"></ul>
+
+	</body>
+
+</html>

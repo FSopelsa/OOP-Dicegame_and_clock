@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* ----- Grundstil för webbsidan ----- */
+html, body, nav, header, main, aside, footer, article, section, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+	font-size: 16px;
+	height: 100%;
+	user-select: none;
+}/*________________________________________________________*/
+/**/
+body {
+    background-color: antiquewhite;
+    padding: 5px;
+}
+
+body div {
+    background-color: rgb(155, 216, 216);
+    padding: 5px;
+}
+
+body div p {
+    background-color: antiquewhite;
+    color: black;
+    opacity: 0.5;
+    padding: 5px;
+}
+
+body p {
+    background-color: blueviolet;
+    color: beige;
+    padding: 5px;
+}
